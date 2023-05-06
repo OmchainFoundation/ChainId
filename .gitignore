@@ -1,0 +1,36 @@
+# Ignore build artifacts
+dist/
+artifacts/
+cache/
+coverage/
+build/
+reports/
+deployments/
+
+# Ignore environment-specific files
+.env
+.env.local
+.env.*.local
+.env.test
+.env.production
+
+# Ignore npm package files
+node_modules/
+package-lock.json
+yarn.lock
+
+# Ignore typechain artifacts
+typechain/
+
+# Ignore Hardhat cache files
+cache/
+
+# Ignore Hardhat artifacts
+artifacts/
+
+# Ignore coverage files
+coverage/
+coverage.json
+
+# Ignore Hardhat types files
+typechain-types/
