@@ -15,7 +15,7 @@ contract ChainID is IChainID, SoulboundERC721 {
         return idOfAddress_[addr];
     }
 
-    function safeMint(address to, uint256 tokenId) public override onlyRole(MINTER_ROLE) {
+    function safeMint(address to, uint256 tokenId) public override(IChainID, SoulboundERC721) onlyRole(MINTER_ROLE) {
         require(idOfAddress_[to] == 0, "ChainID: address already has a token");
         _safeMint(to, tokenId);
         idOfAddress_[to] = tokenId;
