@@ -21,7 +21,7 @@ contract ChainID is IChainID, SoulboundERC721 {
         idOfAddress_[to] = tokenId;
     }
 
-    function burn(uint256 tokenId) public override onlyRole(BURNER_ROLE) {
+    function burn(uint256 tokenId) public override(IChainID, SoulboundERC721) onlyRole(BURNER_ROLE) {
         address owner = ownerOf(tokenId);
         _burn(tokenId);
         idOfAddress_[owner] = 0;
